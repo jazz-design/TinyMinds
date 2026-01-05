@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+       
+        url("bg.jpg") no-repeat center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Floating stars */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(#ffffff 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: stars 60s linear infinite;
+    opacity: 0.15;
+}
+
+@keyframes stars {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-500px, -500px);
+    }
+}
+
+
+
+@keyframes floatRocket {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.container {
+    position: relative;
+    max-width: 900px;
+    padding: 40px 20px;
+    animation: fadeUp 1.5s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.coming-soon {
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ffd43b;
+    margin-bottom: 25px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.85;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #ffd43b;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    opacity: 0.95;
+    margin-bottom: 35px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+}
+
+.socials a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ffd43b;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.socials a:hover::after {
+    width: 100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 15px;
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .rocket {
+        font-size: 3rem;
+        top: 10%;
+        right: 5%;
+    }
+}
